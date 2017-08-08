@@ -1,0 +1,32 @@
+홈쇼핑 data 
+
+1. 홈쇼핑 크롤링(파이선파일) → excel로 떨어짐
+2. 네이버 카테고리 매핑작업(키워드 제거하는 작업 필요_’except_word에 추가’) → csv로 떨어짐
+3. prod_id 없는 row 지우기(csv 파일에서지우기)
+ 
+4.  07 --> 7 / gsshop --> GS SHOP 등 db에 들어갈 쇼핑몰 이름으로 변경( 이건 코드에서 변경해야함 추가작업)
+
+5. tmp_homeshopping 테이블 지난 데이터 삭제 후 insert
+6. 네이버 카테고리 ↔ 쇼닥 카테고리 매핑작업( update 쿼리문_kt_homeshopping)
+7. 고저 mapping 쿼리
+
+
+8. 2개의 db에 업로드 할 때 중복되는 상품 삭제쿼리 
+
+9. 스위트케이에서 준 쿼리 실행( 2개 db에 업로드) 
+
+===
+
+10. 추천 db insert(3개테이블에 입력))
+ - result table에 insert (쿼리날짜, 버전,reg_date 바꿔서,TT1609** --> ALL) 
+
+12. 새로 정의한 recommend_ver : 날짜 순으로 update 해줘야함(service, version 2개 테이블) 
+
+13. result table
+TVPOP : recommend_id: ALL 
+TVSTB: recommend_id : TT
+TVUSR: recommend_id : 10
+
+14. tv_result 백선임님 쿼리실행(update)
+
+TVSTB update

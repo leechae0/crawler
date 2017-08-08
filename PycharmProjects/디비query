@@ -1,0 +1,145 @@
+
+=======6. 네이버 카테고리 ↔ 쇼닥 카테고리 매핑작업( update 쿼리문_kt_homeshopping)
+update tmp_homeshopping
+set
+cate1 = B.shodoc_cate1,
+cate2 = B.shodoc_cate2
+from kt_category_mapping as B
+where  
+(trim(cate1) = trim(B.otapi_cate1)
+and 
+trim(cate2) = trim(B.otapi_cate2))
+
+
+
+update tmp_homeshopping
+set
+cate1 = B.shodoc_cate1,
+cate2 = B.shodoc_cate2,
+cate3 = B.shodoc_cate3,
+cate4 = B.shodoc_cate4
+from kt_category_mapping as B
+where  
+(trim(cate1) = trim(B.otapi_cate1)
+and 
+trim(cate2) = trim(B.otapi_cate2)
+and 
+trim(cate3) = trim(B.otapi_cate3))
+
+==================================================================================================
+=======7.고저 mapping 쿼리
+
+
+update tmp_homeshopping as A
+set
+participation_type = B.flag_hl
+from tmp_prod_flag as B
+where  
+(trim(A.cate1) = trim(B.cate1)
+and 
+trim(A.cate2) = trim(B.cate2))
+
+
+
+==================================================================================================
+==== 8. 2개의 db에 업로드 할 때 중복되는 상품 삭제쿼리(tb_product, tb_product_tv-2테이블다해야함)
+
+delete from tb_product where prod_id in 
+(select prod_id from tb_product a
+where exists(select * from tmp_homeshopping b where a.prod_id = b.prod_id))
+
+select count(*) from tb_product a
+where exists(select * from tmp_homeshopping b where a.prod_id = b.prod_id) 
+
+
+
+
+=================================================================================================
+=====9. 스위트케이에서 준 쿼리 실행( 2개 db에 업로드)
+
+INSERT INTO tb_product (prod_id,shop_code,partner_name,shop_prod_id,prod_name,prod_price
+,prod_url_m,prod_img_url_m,cate1,cate2,cate3,cate4,cate1_id,cate2_id,cate3_id,cate4_id, model_name
+,brand,company,country_origin,gender,video_chk,video_url,participation_type,use_yn)
+SELECT prod_id , shop_code
+, parthner_name
+,shop_prod_id, prod_name,replace(replace(prod_price_,',',''),'원','')
+,prod_url_m,prod_img_url_m,cate1,cate2,cate3,cate4,'','','','',''
+,'','','','','','',participation_type,use_yn
+FROM tmp_homeshopping;
+ 
+
+
+
+INSERT INTO tb_product_tv (prod_id,ch_name,start_date,end_date,ch_no)
+SELECT prod_id , parthner_name ,substring(start_date,0,20) , substring(end_date,0,20),
+case 
+ WHEN parthner_name = '신세계쇼핑' THEN '2'
+ WHEN parthner_name = 'CJ오쇼핑' THEN '4'
+ WHEN parthner_name = '롯데홈쇼핑' THEN '6'
+ WHEN parthner_name = 'GS SHOP' THEN '8'
+ WHEN parthner_name = '현대홈쇼핑' THEN '10'
+ WHEN parthner_name = 'NS홈쇼핑' THEN '12'
+ WHEN parthner_name = '홈&쇼핑' THEN '14'
+ WHEN parthner_name = 'K쇼핑' THEN '20'
+ WHEN parthner_name = '아임쇼핑' THEN '22'
+ WHEN parthner_name = 'CJ오쇼핑플러스' THEN '28'
+ WHEN parthner_name = 'B Shopping' THEN '30'
+ WHEN parthner_name = '현대홈쇼핑+샵' THEN '36'
+ WHEN parthner_name = 'GS MY SHOP' THEN '38'
+ WHEN parthner_name = 'W 쇼핑' THEN '40'
+ WHEN parthner_name = 'NS Shop+' THEN '42'
+ ELSE ''
+end
+FROM tmp_homeshopping 
+=================================================================================================
+
+tb_product/ homeshopping_prod table product id 
+
+delete from tb_product where prod_id in (select prod_id from tb_product where exists(select prod_id from homeshopping_prod where homeshopping_prod.prod_id=tb_product.prod_id and homeshopping_prod.start_date like '2017/06/28 %'))
+
+=================================================================================================
+INSERT INTO tb_product (prod_id,shop_code,partner_name,shop_prod_id,prod_name,prod_price
+,prod_url_m,prod_img_url_m,cate1,cate2,cate3,cate4,cate1_id,cate2_id,cate3_id,cate4_id, model_name
+,brand,company,country_origin,gender,video_chk,video_url,participation_type,use_yn,prod_ranking)
+SELECT  distinct prod_id , shop_code
+, parthner_name
+,shop_prod_id, prod_name,replace(replace(prod_price,',',''),'원','')
+,prod_url_m,prod_img_url_m,cate1,cate2,cate3,cate4,'','','','',''
+,'','','','','','',participation_type,'y',99
+FROM homeshopping_prod where not start_date < '2017/06/28 00:00:00'
+
+=================================================================================================
+=====10. 추천디비 
+
+
+=================================================================================================
+=====11. 백선임님 쿼리 업데이트
+update service_recommend_result
+set recommend_ver='',reg_date=''
+where recommend_type='TVUSR'
+
+update service_recommend_result
+set recommend_ver='',reg_date=''
+where recommend_type like 'TV%' and ranking>='6'
+
+
+
+=================================================================================================
+=====12. 나머지디비 업데이트 
+update service_recommend
+set recommend_ver='201705110000'
+where recommend_type='TVPOP'
+
+update service_recommend
+set recommend_ver='201705110000'
+where recommend_type='TVUSR'
+
+
+
+update recommend_ver
+set recommend_ver='201705110000'
+where recommend_type='TVPOP'
+
+update recommend_ver
+set recommend_ver='201705110000'
+where recommend_type='TVUSR'

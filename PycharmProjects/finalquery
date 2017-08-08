@@ -1,0 +1,786 @@
+update tmp_homeshopping
+set
+cate1 = B.shodoc_cate1,
+cate2 = B.shodoc_cate2
+from kt_category_mapping as B
+where  
+(trim(cate1) = trim(B.otapi_cate1)
+and 
+trim(cate2) = trim(B.otapi_cate2))
+
+
+
+update tmp_homeshopping
+set
+cate1 = B.shodoc_cate1,
+cate2 = B.shodoc_cate2,
+cate3 = B.shodoc_cate3,
+cate4 = B.shodoc_cate4
+from kt_category_mapping as B
+where  
+(trim(cate1) = trim(B.otapi_cate1)
+and 
+trim(cate2) = trim(B.otapi_cate2)
+and 
+trim(cate3) = trim(B.otapi_cate3))
+
+
+=========================================================
+
+
+update tmp_homeshopping as A
+set
+participation_type = B.flag_hl
+from tmp_prod_flag as B
+where  
+(trim(A.cate1) = trim(B.cate1)
+and 
+trim(A.cate2) = trim(B.cate2))
+
+========================================================
+
+여성의류 
+
+select * from time_cate where cate2='여성의류'
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='패션의류' and cate2='여성의류' limit 1 offset 0), 1, 
+            '2017-05-26', '6');
+
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='패션의류' and cate2='여성의류' limit 1 offset 1), 4, 
+            '2017-05-26', '6');
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='패션의류' and cate2='여성의류' limit 1 offset 2), 2, 
+            '2017-05-26', '7');
+
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='패션의류' and cate2='여성의류' limit 1 offset 3), 5, 
+            '2017-05-26', '7');
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='패션의류' and cate2='여성의류' limit 1 offset 4), 2, 
+            '2017-05-26', '8');
+
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='패션의류' and cate2='여성의류' limit 1 offset 5), 5, 
+            '2017-05-26', '8');
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='패션의류' and cate2='여성의류' limit 1 offset 6), 1, 
+            '2017-05-26', '9');
+
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='패션의류' and cate2='여성의류' limit 1 offset 7), 1, 
+            '2017-05-26', '10');
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='패션의류' and cate2='여성의류' limit 1 offset 8), 4, 
+            '2017-05-26', '10');
+
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='패션의류' and cate2='여성의류' limit 1 offset 9), 1, 
+            '2017-05-26', '11');
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='패션의류' and cate2='여성의류' limit 1 offset 10), 4, 
+            '2017-05-26', '11');
+
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='패션의류' and cate2='여성의류' limit 1 offset 11), 2, 
+            '2017-05-26', '12');
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='패션의류' and cate2='여성의류' limit 1 offset 12), 5, 
+            '2017-05-26', '12');
+
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='패션의류' and cate2='여성의류' limit 1 offset 13), 1, 
+            '2017-05-26', '13');
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='패션의류' and cate2='여성의류' limit 1 offset 14), 4, 
+            '2017-05-26', '13');
+
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='패션의류' and cate2='여성의류' limit 1 offset 15), 1, 
+            '2017-05-26', '14');
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='패션의류' and cate2='여성의류' limit 1 offset 16), 4, 
+            '2017-05-26', '14');
+
+            
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='패션의류' and cate2='여성의류' limit 1 offset 17), 2, 
+            '2017-05-26', '15');
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='패션의류' and cate2='여성의류' limit 1 offset 18), 5, 
+            '2017-05-26', '15');
+               
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='패션의류' and cate2='여성의류' limit 1 offset 19), 1, 
+            '2017-05-26', '19');
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='패션의류' and cate2='여성의류' limit 1 offset 20), 4, 
+            '2017-05-26', '19');         
+
+
+
+
+========================================
+건강식품 
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='식품' and cate2='건강식품' limit 1 offset 0), 2, 
+            '2017-05-26', '6');
+
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='식품' and cate2='건강식품' limit 1 offset 1), 5, 
+            '2017-05-26', '6');
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='식품' and cate2='건강식품' limit 1 offset 2), 2, 
+            '2017-05-26', '9');
+
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='식품' and cate2='건강식품' limit 1 offset 3), 5, 
+            '2017-05-26', '9');
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='식품' and cate2='건강식품' limit 1 offset 4), 2, 
+            '2017-05-26', '10');
+
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping cate1='식품' and cate2='건강식품' limit 1 offset 5), 5, 
+            '2017-05-26', '10');
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='식품' and cate2='건강식품' limit 1 offset 6), 3, 
+            '2017-05-26', '20');
+
+
+====================================================
+수산
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='식품' and cate2='수산' limit 1 offset 0), 3, 
+            '2017-05-26', '16');
+
+
+=====================================================
+
+농산물
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='식품' and cate2='농산물' limit 1 offset 0), 2, 
+            '2017-05-26', '16');
+
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='식품' and cate2='농산물' limit 1 offset 1), 5, 
+            '2017-05-26', '16');
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='식품' and cate2='농산물' limit 1 offset 2), 1, 
+            '2017-05-26', '17');
+
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='식품' and cate2='농산물' limit 1 offset 3), 4, 
+            '2017-05-26', '17');
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='식품' and cate2='농산물' limit 1 offset 4), 2, 
+            '2017-05-26', '18');
+
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping cate1='식품' and cate2='농산물' limit 1 offset 5), 5, 
+            '2017-05-26', '18');
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='식품' and cate2='농산물' limit 1 offset 6), 2, 
+            '2017-05-26', '24');
+
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='식품' and cate2='농산물' limit 1 offset 7), 5, 
+            '2017-05-26', '24');
+
+
+=================================================
+
+축산 
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='식품' and cate2='축산' limit 1 offset 0), 3, 
+            '2017-05-26', '22');
+
+===================================================
+
+
+패션의류 -남성의류 
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='패션의류' and cate2='남성의류' limit 1 offset 0), 3, 
+            '2017-05-26', '6');
+
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='패션의류' and cate2='남성의류' limit 1 offset 1), 1, 
+            '2017-05-26', '7');
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='패션의류' and cate2='남성의류' limit 1 offset 2), 4, 
+            '2017-05-26', '7');
+
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='패션의류' and cate2='남성의류' limit 1 offset 3), 3, 
+            '2017-05-26', '15');
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='패션의류' and cate2='남성의류' limit 1 offset 4), 1, 
+            '2017-05-26', '23');
+
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping cate1='패션의류' and cate2='남성의류' limit 1 offset 5), 4, 
+            '2017-05-26', '23');
+
+====================================
+화장용품 
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='화장품/미용' and cate2='화장용품' limit 1 offset 0), 3, 
+            '2017-05-26', '7');
+
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='화장품/미용' and cate2='화장용품' limit 1 offset 1), 1, 
+            '2017-05-26', '8');
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='화장품/미용' and cate2='화장용품' limit 1 offset 2), 4, 
+            '2017-05-26', '8');
+
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='화장품/미용' and cate2='화장용품' limit 1 offset 3), 2, 
+            '2017-05-26', '11');
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='화장품/미용' and cate2='화장용품' limit 1 offset 4), 5, 
+            '2017-05-26', '11');
+
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='화장품/미용' and cate2='화장용품' limit 1 offset 5), 3, 
+            '2017-05-26', '13');
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='화장품/미용' and cate2='화장용품' limit 1 offset 6), 3, 
+            '2017-05-26', '19');
+
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='화장품/미용' and cate2='화장용품' limit 1 offset 7), 2, 
+            '2017-05-26', '22');
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='화장품/미용' and cate2='화장용품' limit 1 offset 8), 5, 
+            '2017-05-26', '22');
+
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='화장품/미용' and cate2='화장용품' limit 1 offset 9), 2, 
+            '2017-05-26', '23');
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='화장품/미용' and cate2='화장용품' limit 1 offset 10), 5, 
+            '2017-05-26', '23');
+
+======================================================
+
+주방용품 
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='생활' and cate2='주방용품' limit 1 offset 0), 1, 
+            '2017-05-26', '9');
+
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='생활' and cate2='주방용품' limit 1 offset 1), 4, 
+            '2017-05-26', '9');
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='생활' and cate2='주방용품' limit 1 offset 2), 3, 
+            '2017-05-26', '10');
+
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='생활' and cate2='주방용품' limit 1 offset 3), 1, 
+            '2017-05-26', '12');
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='생활' and cate2='주방용품' limit 1 offset 4), 4, 
+            '2017-05-26', '12');
+
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='생활' and cate2='주방용품' limit 1 offset 5), 2, 
+            '2017-05-26', '13');
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='생활' and cate2='주방용품' limit 1 offset 6), 5, 
+            '2017-05-26', '13');
+
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='생활' and cate2='주방용품' limit 1 offset 7), 2, 
+            '2017-05-26', '14');
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='생활' and cate2='주방용품' limit 1 offset 8), 5, 
+            '2017-05-26', '14');
+
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='생활' and cate2='주방용품' limit 1 offset 9), 1, 
+            '2017-05-26', '15');
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='생활' and cate2='주방용품' limit 1 offset 10), 4, 
+            '2017-05-26', '15');
+
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='생활' and cate2='주방용품' limit 1 offset 11), 1, 
+            '2017-05-26', '16');
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='생활' and cate2='주방용품' limit 1 offset 12), 4, 
+            '2017-05-26', '16');
+
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='생활' and cate2='주방용품' limit 1 offset 13), 2, 
+            '2017-05-26', '17');
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='생활' and cate2='주방용품' limit 1 offset 14), 5, 
+            '2017-05-26', '17');
+
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='생활' and cate2='주방용품' limit 1 offset 15), 1, 
+            '2017-05-26', '18');
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='생활' and cate2='주방용품' limit 1 offset 16), 4, 
+            '2017-05-26', '18');
+
+            
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='생활' and cate2='주방용품' limit 1 offset 17), 2, 
+            '2017-05-26', '19');
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='생활' and cate2='주방용품' limit 1 offset 18), 5, 
+            '2017-05-26', '19');
+               
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='생활' and cate2='주방용품' limit 1 offset 19), 1, 
+            '2017-05-26', '20');
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='생활' and cate2='주방용품' limit 1 offset 20), 4, 
+            '2017-05-26', '20');         
+
+            
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='생활' and cate2='주방용품' limit 1 offset 21), 2, 
+            '2017-05-26', '21');  
+
+            
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='생활' and cate2='주방용품' limit 1 offset 22), 5, 
+            '2017-05-26', '21');  
+
+=====================================================
+
+생활가전 
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='디지털/가전' and cate2='생활가전' limit 1 offset 0), 3, 
+            '2017-05-26', '11');
+
+
+======================================================
+
+완구/매트
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='출산/육아' and cate2='완구/매트' limit 1 offset 0), 3, 
+            '2017-05-26', '12');
+
+=====================================================
+여행문화 
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='여행/문화' and cate2='여행/항공권' limit 1 offset 0), 3, 
+            '2017-05-26', '17');
+
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='여행/문화' and cate2='여행/항공권' limit 1 offset 1), 3, 
+            '2017-05-26', '23');
+
+=================================
+여성언더웨어/잠옷
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='패션의류' and cate2='여성언더웨어/잠옷' limit 1 offset 0), 1, 
+            '2017-05-26', '21');
+
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='패션의류' and cate2='여성언더웨어/잠옷' limit 1 offset 1), 4, 
+            '2017-05-26', '21');
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='패션의류' and cate2='여성언더웨어/잠옷' limit 1 offset 2), 1, 
+            '2017-05-26', '22');
+
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='패션의류' and cate2='여성언더웨어/잠옷' limit 1 offset 3), 4, 
+            '2017-05-26', '22');
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='패션의류' and cate2='여성언더웨어/잠옷' limit 1 offset 4), 3, 
+            '2017-05-26', '24');
+
+===============================================
+주방가전 
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='디지털/가전' and cate2='주방가전' limit 1 offset 0), 3, 
+            '2017-05-26', '14');
+
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='디지털/가전' and cate2='주방가전' limit 1 offset 1), 3, 
+            '2017-05-26', '18');
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='디지털/가전' and cate2='주방가전' limit 1 offset 2), 2, 
+            '2017-05-26', '20');
+
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='디지털/가전' and cate2='주방가전' limit 1 offset 3), 5, 
+            '2017-05-26', '20');
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='디지털/가전' and cate2='주방가전' limit 1 offset 4), 3, 
+            '2017-05-26', '21');
+
+
+
+===============================
+패션잡화
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='패션잡화' limit 1 offset 0), 1, 
+            '2017-05-26', '8');
+
+===============================
+생활용품
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='생활' and cate2='생활용품' limit 1 offset 0), 1, 
+            '2017-05-26', '8');
+
+
+
+INSERT INTO public.service_recommend_result(
+            recommend_type, recommend_ver, recommend_id, prod_id, ranking, 
+            reg_date, recommend_time)
+    VALUES ('TVPOP', '201705260000', 'TT160922176', (select prod_id from tmp_homeshopping where cate1='생활' and cate2='생활용품' limit 1 offset 0), 1, 
+            '2017-05-26', '8');
